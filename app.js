@@ -7,8 +7,6 @@ var SerialPort = serialport.SerialPort;
 var sp = new SerialPort("/dev/ttyACM0", {
     parser: serialport.parsers.readline("\n")
 });
-
-
 app.listen(8999);
 
 function handler (req, res) {
