@@ -29,6 +29,4 @@ io.on('connection', function (socket) {
         socket.emit('news', { hello: data });
     });
 
-
-
 });
