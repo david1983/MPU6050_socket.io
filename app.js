@@ -8,7 +8,6 @@ var sp = new SerialPort("/dev/ttyACM0", {
     parser: serialport.parsers.readline("\n")
 });
 app.listen(8999);
-
 function handler (req, res) {
     fs.readFile(__dirname + '/index.html',
         function (err, data) {
@@ -21,7 +20,6 @@ function handler (req, res) {
             res.end(data);
         });
 }
-
 io.on('connection', function (socket) {
     sp.on('data', function(data) {
         socket.emit('news', { hello: data });
